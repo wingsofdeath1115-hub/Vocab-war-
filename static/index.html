@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Sprite Builder</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>AI-to-Animated-Game-Asset</h1>
+    <form id="build-form">
+      <label>Image
+        <input type="file" name="image" accept="image/*" required />
+      </label>
+      <label>Character Name
+        <input type="text" name="character_name" value="Knight_Lancer_2D" />
+      </label>
+      <label>Style Prompt
+        <textarea name="style_prompt" rows="3" placeholder="Hyper-detailed 2D sprite..." ></textarea>
+      </label>
+
+      <fieldset>
+        <legend>Animations</legend>
+        <label><input type="checkbox" value="idle" checked /> Idle</label>
+        <label><input type="checkbox" value="walk" checked /> Walk</label>
+        <label><input type="checkbox" value="attack" checked /> Attack</label>
+        <label><input type="checkbox" value="hurt" checked /> Hurt</label>
+      </fieldset>
+
+      <button type="submit">Generate Asset ZIP</button>
+      <progress id="progress" value="0" max="100"></progress>
+    </form>
+
+    <section>
+      <h2>Preview</h2>
+      <canvas id="preview" width="512" height="128"></canvas>
+      <a id="download" href="#" hidden>Download ZIP</a>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
